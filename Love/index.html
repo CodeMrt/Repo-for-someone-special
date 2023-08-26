@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+
+    <style>
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Rubik:ital,wght@0,400;0,500;1,300;1,600;1,700;1,800&family=Shrikhand&display=swap');
+
+
+
+
+
+.image{
+display: flex;
+
+justify-content: center;
+
+}
+
+.ying{
+
+    display: flex;
+
+    justify-content: center;
+}
+img{
+
+width: 90%;
+
+margin-top: 10%;
+
+margin-bottom: 10%;
+
+}
+
+.what{
+
+
+    padding-top: 5%;
+    font-family: 'Great Vibes', cursive;
+
+color: aliceblue;
+font-size: 7vw;
+padding-left: 3%;
+
+}
+
+.what:hover{
+
+color: black;
+
+
+}
+
+.why{
+    
+    padding-top: 5%;
+
+    padding-right: 3%;
+    font-family: 'Great Vibes', cursive;
+
+
+color: aliceblue;
+
+font-size: 7vw;
+
+}
+
+.why:hover{color: black;}
+
+
+
+#containerT{
+
+
+display: flex;
+
+flex-direction: row;
+
+justify-content: space-between;
+
+
+
+}
+
+html { 
+  background: url(Images/aldebaran-s-qtRF_RxCAo0-unsplash.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+#second-c{
+
+display: flex;
+
+justify-content: center;
+
+flex-direction: row;
+
+}
+
+ body{
+
+    }
+
+
+
+
+
+
+
+
+    #container {
+	/* Center the text in the viewport. */
+	position: absolute;
+	margin: auto;
+	width: 100vw;
+	height: 80pt;
+	top: 0;
+	bottom: 0;
+
+	
+	/* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
+	filter: url(#threshold) blur(0.6px);
+}
+
+
+
+
+body{
+
+
+display:grid;
+
+justify-content:center;
+
+}
+
+/* Your average text styling */
+#text1, #text2 {
+
+    margin-top: 12%;   position: absolute;   width: 72.7%;   display: flex;   font-family: 'Great Vibes', cursive;   font-size: 140pt;   /*! text-align: center; */   user-select: none;   justify-content: center;}
+
+
+
+
+video{border-radius: 10%;
+
+
+
+border-style:solid;
+
+border-color: black;
+
+}
+
+.Video{display: flex;
+
+justify-content: center;}
+
+
+
+
+@media screen and (max-width: 1440px){
+
+
+#text1, #text2{
+        margin-top: 35%;
+font-size: 100pt;
+width:68.5%
+
+    }
+
+
+
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    video {
+    
+width: 100%;
+
+    }
+    
+    #text1, #text2{
+        margin-top: 35%;
+font-size: 60pt;
+width:100%
+
+    }
+
+    .img{margin-bottom: 1%;}
+
+    }
+
+
+
+
+
+
+    
+    @media screen and (max-width: 768px) {
+        video {
+    
+    width: 100%;
+    
+        }
+
+        #text1, #text2{
+            margin-top: 35%;
+font-size: 40pt;
+width:100%
+
+    }
+
+    .img{margin-bottom: 1%;}
+    }
+    
+    @media screen and (max-width: 413px) {
+        video {
+    
+    width: 100%;
+    
+        }
+
+        #text1, #text2{
+            margin-top: 35%;
+font-size: 30pt;
+width:100%
+
+    }
+
+    .img{margin-bottom: 1%;}
+    }
+
+
+    </style>
+    <link rel="icon" href="/icons8-mountain-96.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For you</title>
+</head>
+<body div="container">
+    
+
+
+    <div class="image">
+        <div class="ying">
+<img src="Images/grunge-yin-yang-2-1024x971.png">
+</div>
+</div>
+<div>
+    <span id="text1"></span>
+	<span id="text2"></span>
+
+   
+
+</div>
+
+
+
+
+
+<svg id="filters">
+	<defs>
+		<filter id="threshold">
+            <feColorMatrix in="SourceGraphic"
+            type="matrix"
+            values="1 0 0 0 0
+                            0 1 0 0 0
+                            0 0 1 0 0
+                            0 0 0 255 -140" />
+</filter>
+</defs>
+</svg>
+     
+
+
+
+<video controls muted loop autoplay>
+    <source src="Videos/production_id 4812205 (1080p).mp4" type="video/mp4">
+  </video>
+</div>
+
+<div id="containerT">
+
+
+
+    <div class="what"> What ?</div>
+
+
+
+    <div class="why"> Why ?</div>
+
+
+
+</div>
+
+
+<script>
+
+
+
+
+
+const elts = {
+	text1: document.getElementById("text1"),
+	text2: document.getElementById("text2")
+};
+
+// The strings to morph between. You can change these to anything you want!
+const texts = [
+	"Why",
+	"is",
+	"this",
+	"so",
+	"satisfying",
+	"to",
+	"watch?",
+    "Double",
+    "tap",
+    "for",
+    "a",
+    "better",
+    "experience"
+];
+
+// Controls the speed of morphing.
+const morphTime = 1;
+const cooldownTime = 0.25;
+
+let textIndex = texts.length - 1;
+let time = new Date();
+let morph = 0;
+let cooldown = cooldownTime;
+
+elts.text1.textContent = texts[textIndex % texts.length];
+elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+function doMorph() {
+	morph -= cooldown;
+	cooldown = 0;
+	
+	let fraction = morph / morphTime;
+	
+	if (fraction > 1) {
+		cooldown = cooldownTime;
+		fraction = 1;
+	}
+	
+	setMorph(fraction);
+}
+
+// A lot of the magic happens here, this is what applies the blur filter to the text.
+function setMorph(fraction) {
+	// fraction = Math.cos(fraction * Math.PI) / -2 + .5;
+	
+	elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+	elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+	
+	fraction = 1 - fraction;
+	elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+	elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+	
+	elts.text1.textContent = texts[textIndex % texts.length];
+	elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+}
+
+function doCooldown() {
+	morph = 0;
+	
+	elts.text2.style.filter = "";
+	elts.text2.style.opacity = "100%";
+	
+	elts.text1.style.filter = "";
+	elts.text1.style.opacity = "0%";
+}
+
+// Animation loop, which is called every frame.
+function animate() {
+	requestAnimationFrame(animate);
+	
+	let newTime = new Date();
+	let shouldIncrementIndex = cooldown > 0;
+	let dt = (newTime - time) / 1000;
+	time = newTime;
+	
+	cooldown -= dt;
+	
+	if (cooldown <= 0) {
+		if (shouldIncrementIndex) {
+			textIndex++;
+		}
+		
+		doMorph();
+	} else {
+		doCooldown();
+	}
+}
+
+// Start the animation.
+animate();
+
+</script>
+</body>
+</html>
